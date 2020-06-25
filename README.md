@@ -8,3 +8,4 @@ the features that have been made are :
 
 I will put some references below :
 - https://github.com/irevenko/info-bot
+- https://github.com/eternnoir/pyTelegramBotAPI
