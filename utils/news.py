@@ -1,4 +1,5 @@
 import requests
+import emojis
 from bs4 import BeautifulSoup
 
 
@@ -18,5 +19,5 @@ def get_article():
         publish_time = raw_article[3]
     href = soup.find_all('div', {'class': 'gs-c-promo-body gel-1/2@xs gel-1/1@m gs-u-mt@m'})[0].find('a', {'class': 'gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-pica-bold nw-o-link-split__anchor'})['href']
     link = f' https://www.bbc.com{href}'
-    article = f'✏️ <b>Topic</b>:  {topic}\n⚠️ <b>Title</b>:  {title}\n📌 <b>Description</b>:  {description}\n🕒 <b>Published</b>:  {publish_time}\n➡️ <b>Full article</b>: {link}'
+    article = emojis.encode(f'✏️ <b>Topic</b>: {topic}\n️ ⚠️ <b>Title</b>:  {title}\n :pushpin: <b>Description</b>:  {description}\n :stopwatch: <b>Published</b>:  {publish_time}\n :arrow_right: <b>Full article</b>: {link}')
     return article
